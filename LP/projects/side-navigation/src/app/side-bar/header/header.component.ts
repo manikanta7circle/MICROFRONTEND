@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  public sendMessage() {
+    const event = new CustomEvent('eventFromNavigation', {detail: 'Hi i am event from navigation!'});
+    dispatchEvent(event)
+  }
 }

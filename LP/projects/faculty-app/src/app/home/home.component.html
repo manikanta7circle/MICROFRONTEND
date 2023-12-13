@@ -1,7 +1,14 @@
 <div class="main-container">
     Faculty App
+    <div class="button-container">
+        <button (click)="sendMessage()"> Communicate with faculty-cr app</button>
+    </div>
+    <div *ngIf="message">
+        {{message}}
+    </div>
     <div class="content-container">
         <a routerLink="cr-mfe">Load CR MFE</a>
+
         <router-outlet></router-outlet>
     </div>
 </div>
