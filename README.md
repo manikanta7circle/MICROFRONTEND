@@ -1,10 +1,10 @@
 # MICROFRONTEND
 
 Steps to render the application
-#npm install
-#ng s faculty-app-cr
-#ng s side-navigation
-#ng s faculty-app
+1. #npm install
+2. #ng s faculty-app-cr
+3. #ng s side-navigation
+4. #ng s faculty-app
 
 
 Implementation Details
