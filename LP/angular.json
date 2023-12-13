@@ -1,0 +1,328 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"faculty-app": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/faculty-app",
+			"sourceRoot": "projects/faculty-app/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/faculty-app",
+						"index": "projects/faculty-app/src/index.html",
+						"main": "projects/faculty-app/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/faculty-app/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/faculty-app/src/favicon.ico",
+							"projects/faculty-app/src/assets"
+						],
+						"styles": [
+							"projects/faculty-app/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/faculty-app/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/faculty-app/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "faculty-app:build:production",
+							"extraWebpackConfig": "projects/faculty-app/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "faculty-app:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4200,
+						"publicHost": "http://localhost:4200",
+						"extraWebpackConfig": "projects/faculty-app/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "faculty-app:build",
+						"extraWebpackConfig": "projects/faculty-app/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/faculty-app/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/faculty-app/src/favicon.ico",
+							"projects/faculty-app/src/assets"
+						],
+						"styles": [
+							"projects/faculty-app/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"faculty-app-cr": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/faculty-app-cr",
+			"sourceRoot": "projects/faculty-app-cr/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/faculty-app-cr",
+						"index": "projects/faculty-app-cr/src/index.html",
+						"main": "projects/faculty-app-cr/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/faculty-app-cr/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/faculty-app-cr/src/favicon.ico",
+							"projects/faculty-app-cr/src/assets"
+						],
+						"styles": [
+							"projects/faculty-app-cr/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/faculty-app-cr/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/faculty-app-cr/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "faculty-app-cr:build:production",
+							"extraWebpackConfig": "projects/faculty-app-cr/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "faculty-app-cr:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4300,
+						"publicHost": "http://localhost:4300",
+						"extraWebpackConfig": "projects/faculty-app-cr/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "faculty-app-cr:build",
+						"extraWebpackConfig": "projects/faculty-app-cr/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/faculty-app-cr/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/faculty-app-cr/src/favicon.ico",
+							"projects/faculty-app-cr/src/assets"
+						],
+						"styles": [
+							"projects/faculty-app-cr/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		},
+		"side-navigation": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "projects/side-navigation",
+			"sourceRoot": "projects/side-navigation/src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "ngx-build-plus:browser",
+					"options": {
+						"outputPath": "dist/side-navigation",
+						"index": "projects/side-navigation/src/index.html",
+						"main": "projects/side-navigation/src/main.ts",
+						"polyfills": [
+							"zone.js"
+						],
+						"tsConfig": "projects/side-navigation/tsconfig.app.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/side-navigation/src/favicon.ico",
+							"projects/side-navigation/src/assets"
+						],
+						"styles": [
+							"projects/side-navigation/src/styles.scss"
+						],
+						"scripts": [],
+						"extraWebpackConfig": "projects/side-navigation/webpack.config.js",
+						"commonChunk": false
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all",
+							"extraWebpackConfig": "projects/side-navigation/webpack.prod.config.js"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "ngx-build-plus:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "side-navigation:build:production",
+							"extraWebpackConfig": "projects/side-navigation/webpack.prod.config.js"
+						},
+						"development": {
+							"browserTarget": "side-navigation:build:development"
+						}
+					},
+					"defaultConfiguration": "development",
+					"options": {
+						"port": 4400,
+						"publicHost": "http://localhost:4400",
+						"extraWebpackConfig": "projects/side-navigation/webpack.config.js"
+					}
+				},
+				"extract-i18n": {
+					"builder": "ngx-build-plus:extract-i18n",
+					"options": {
+						"browserTarget": "side-navigation:build",
+						"extraWebpackConfig": "projects/side-navigation/webpack.config.js"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "projects/side-navigation/tsconfig.spec.json",
+						"inlineStyleLanguage": "scss",
+						"assets": [
+							"projects/side-navigation/src/favicon.ico",
+							"projects/side-navigation/src/assets"
+						],
+						"styles": [
+							"projects/side-navigation/src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		}
+	}
+}
